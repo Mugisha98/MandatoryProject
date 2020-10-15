@@ -10,13 +10,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class HomeController {
 
-    @Autowired
-    ICarRepository iCarRepository;
-
     @GetMapping("/")
-    public String index(Model model)
+    public String index()
     {
-        model.addAttribute("Cars",iCarRepository.readAll());
         return "index";
     }
 

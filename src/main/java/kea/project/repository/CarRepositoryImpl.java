@@ -17,8 +17,6 @@ public class CarRepositoryImpl implements ICarRepository {
     JdbcTemplate jdbcTemplate;
     SqlRowSet sqlRowSet;
 
-
-
     @Override
     public void create(Car car) {
         String sql = "INSERT INTO CARS(CAR_BRAND, CAR_COLOR, CAR_MODEL, CAR_YEAR)" +
