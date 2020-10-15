@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Factory</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="icon" href="https://icon-library.com/images/movie-icon-png/movie-icon-png-2.jpg">
+</head>
+<body>
+<!--NAVIGATION BAR-->
+<header>
+<nav id="burger">
+    <input type="checkbox" id="burger-checkbox" />
+    <label class="menu--toggle__trigger" for="burger-checkbox"></label>
+    <label class="menu--toggle__burger" for="burger-checkbox"></label>
+
+    <nav>
+        <ul>
+            <li>
+                <a href="/overview">Cars</a>
+            </li>
+            <li>
+                <a href="/"> Contact</a>
+            </li>
+            <li>
+                <a href="/new-car"> New car</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <div>
+        <h1>Overview</h1>
+    </div>
+    <div>
+        <table>
+            <thead>
+            <th>ID</th>
+            <th>Brand</th>
+            <th>Model</th>
+            <th>Year</th>
+            <th>Color</th>
+            </thead>
+            <tbody th:each="car : ${Cars}">
+            <td th:text="${car.carId}"></td>
+            <td th:text="${car.carBrand}"></td>
+            <td th:text="${car.carModel}"></td>
+            <td th:text="${car.carYear}"></td>
+            <td th:text="${car.carColor}"></td>
+            </tbody>
+        </table>
+    </div>
+</main>
+
+</body>
+</html>

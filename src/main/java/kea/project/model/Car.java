@@ -1,6 +1,7 @@
 package kea.project.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name="Cars")
@@ -10,13 +11,29 @@ public class Car {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int carId;
 
+    @Column
     private String carBrand;
+    @Column
     private String carModel;
+    @Column
     private int carYear;
+    @Column
     private String carColor;
 
-    @ManyToOne
-    Factory factorys;
+    // Specifies the Car table does not contain an factory column, but
+    // an factory_id column with a foreign key. And creates a join to
+    // lazily fetch the factory
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "factory_id")
+    private Factory factorys;
+
+    public Factory getFactorys() {
+        return factorys;
+    }
+
+    public void setFactorys(Factory factorys) {
+        this.factorys = factorys;
+    }
 
     public Car() {
     }

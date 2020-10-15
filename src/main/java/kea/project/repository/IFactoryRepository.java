@@ -1,7 +1,10 @@
 package kea.project.repository;
 
 import kea.project.model.Factory;
-import org.springframework.data.repository.CrudRepository;
+import java.util.List;
 
-public interface IFactoryRepository extends CrudRepository<Factory,Integer> {
+public interface IFactoryRepository {
+    void create(Factory factory);
+    Factory read(int id);
+    List<Factory> readAll();
 }

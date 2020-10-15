@@ -1,12 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="icon" href="https://icon-library.com/images/movie-icon-png/movie-icon-png-2.jpg">
 </head>
 <body>
+    <header>
+        <!--NAVIGATION BAR-->
+        <nav id="burger">
+            <input type="checkbox" id="burger-checkbox" />
+            <label class="menu--toggle__trigger" for="burger-checkbox"></label>
+            <label class="menu--toggle__burger" for="burger-checkbox"></label>
+            <ul>
+
+                <li>
+                    <a href="/overview" class="nav-item">Cars</a>
+                </li>
+                <li>
+                   <a href="/" class="nav-item"> Contact</a>
+                </li>
+                <li>
+                   <a href="/new-car" class="nav-item"> New car</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
     <main>
-        <h1>Wakanda forever</h1>
+        <div>
+            <h1>Welcome to HM CAR</h1>
+        </div>
     </main>
 
 </body>

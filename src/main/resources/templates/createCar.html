@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Car</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="icon" href="https://icon-library.com/images/movie-icon-png/movie-icon-png-2.jpg">
+</head>
+<body>
+<!--NAVIGATION BAR-->
+<header>
+<nav id="burger">
+    <input type="checkbox" id="burger-checkbox" />
+    <label class="menu--toggle__trigger" for="burger-checkbox"></label>
+    <label class="menu--toggle__burger" for="burger-checkbox"></label>
+
+        <ul>
+            <li>
+                <a href="/overview">Cars</a>
+            </li>
+            <li>
+                <a href="/"> Contact</a>
+            </li>
+            <li>
+                <a href="/new-car"> New car</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<!-- MAIN -->
+<main>
+    <div class="movie-container">
+        <div>
+            <h1>Add New Car</h1>
+        </div>
+        <div class="createMovieTable">
+            <form th:action="@{/new-car}" method="POST">
+                <label for="carBrand">BRAND</label>
+                <input  th:field="*{newCar.carBrand}"  id="carBrand" type="text" placeholder="Insert car brand..." required>
+
+                <label for="carModel">MODEL</label>
+                <input th:field="*{newCar.carModel}" id="carModel"  type="text" placeholder="Insert car model..." required>
+
+                <label for="carYear">YEAR</label>
+                <input th:field="*{newCar.carYear}" id="carYear" type="number" placeholder="Insert car year..." required>
+
+                <label for="carColor">COLOR</label>
+                <input th:field="*{newCar.carColor}" id="carColor" type="text" placeholder="Insert car color..." required>
+                <div id="btn-field">
+                    <a href="/overview"><button id="submitBtn" type="submit" >Submit</button></a>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
+
+</body>
+</html>

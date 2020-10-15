@@ -7,18 +7,35 @@ import java.util.List;
 @Table(name="Factorys") //Table name in h2 database
 public class Factory {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id //the id column in the h2 database
+    @GeneratedValue(strategy = GenerationType.IDENTITY) //ID must be unique
     private int factoryId;
 
+    @Column //the column in the h2 database
     private String factoryName;
+    @Column
     private String factoryStreetName;
+    @Column
     private String factoryCity;
+    @Column
     private int factoryZipcode;
+    @Column
     private String factoryCountry;
 
-    @OneToMany(mappedBy = "FACTORYS") //The name of the table in h2 database
-    List<Car> cars;
+    //The 'mappedBy = "factorys"' attribute specifies that
+    // the 'private Factory factorys;' field in Car owns the
+    // relationship (i.e. contains the foreign key for the query to
+    // find all cars for a factory.)
+    @OneToMany(mappedBy = "factorys")
+    private List<Car> cars;
+
+    public List<Car> getCars() {
+        return cars;
+    }
+
+    public void setCars(List<Car> cars) {
+        this.cars = cars;
+    }
 
     public Factory() {
     }

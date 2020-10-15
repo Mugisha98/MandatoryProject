@@ -1,9 +1,10 @@
 package kea.project.repository;
 
 import kea.project.model.Car;
-import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Repository;
+import java.util.List;
 
-@Repository
-public interface ICarRepository extends CrudRepository<Car,Integer> {
+public interface ICarRepository {
+    void create(Car car);
+    Car read(int id);
+    List<Car> readAll();
 }
