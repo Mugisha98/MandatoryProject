@@ -358,9 +358,7 @@ footer {
     }
 
    /* ------------- receipt --------------*/
-    .receipt, table, thead, th{
-         border-style: solid;
-        border-block: white 2px;
-
+    .carOverview, th,td{
+        border: #eeeeee solid 2px;
     }
 }

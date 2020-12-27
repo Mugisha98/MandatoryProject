@@ -1,6 +1,7 @@
 package kea.project.model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity //Creates a h2 database with the class variables as columns
@@ -26,7 +27,7 @@ public class Factory {
     // the 'private Factory factorys;' field in Car owns the
     // relationship (i.e. contains the foreign key for the query to
     // find all cars for a factory.)
-    @OneToMany(mappedBy = "factorys")
+    @OneToMany( mappedBy = "factorys",cascade = CascadeType.ALL,orphanRemoval = true)
     private List<Car> cars;
 
     public List<Car> getCars() {
@@ -38,15 +39,18 @@ public class Factory {
     }
 
     public Factory() {
+
     }
 
-    public Factory(int factoryId, String factoryName, String factoryStreetName, String factoryCity, int factoryZipcode, String factoryCountry) {
+    public Factory(int factoryId, String factoryName, String factoryStreetName, String factoryCity, int factoryZipcode, String factoryCountry, List<Car> cars) {
+
         this.factoryId = factoryId;
         this.factoryName = factoryName;
         this.factoryStreetName = factoryStreetName;
         this.factoryCity = factoryCity;
         this.factoryZipcode = factoryZipcode;
         this.factoryCountry = factoryCountry;
+        this.cars = cars;
     }
 
     public int getFactoryId() {

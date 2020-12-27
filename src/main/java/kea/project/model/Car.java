@@ -23,9 +23,24 @@ public class Car {
     // Specifies the Car table does not contain an factory column, but
     // an factory_id column with a foreign key. And creates a join to
     // lazily fetch the factory
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(cascade= CascadeType.ALL)
     @JoinColumn(name = "factory_id")
     private Factory factorys;
+
+    public Car(int carId, String carBrand, String carModel, int carYear, String carColor, Factory factorys) {
+
+        this.carId = carId;
+        this.carBrand = carBrand;
+        this.carModel = carModel;
+        this.carYear = carYear;
+        this.carColor = carColor;
+        this.factorys = factorys;
+    }
+
+    public Car() {
+
+    }
+
 
     public Factory getFactorys() {
         return factorys;
@@ -35,16 +50,6 @@ public class Car {
         this.factorys = factorys;
     }
 
-    public Car() {
-    }
-
-    public Car(int carId, String carBrand, String carModel, int carYear, String carColor) {
-        this.carId = carId;
-        this.carBrand = carBrand;
-        this.carModel = carModel;
-        this.carYear = carYear;
-        this.carColor = carColor;
-    }
 
     public int getCarId() {
         return carId;

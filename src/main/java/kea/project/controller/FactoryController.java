@@ -6,19 +6,21 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-
+import org.springframework.web.bind.annotation.PostMapping;
+/*
 @Controller
 public class FactoryController
 {
-    /*
     @Autowired
-    IFactoryRepository factoryRepository;
+    IFactoryRepository iFactoryRepository;
 
     @GetMapping("/factory-overview")
     public String readAllFactory(Model model)
     {
-        model.addAttribute("factory",factoryRepository.readAll());
+        model.addAttribute("Factorys",factoryRepository.readAll());
         return "factoryOverview";
-    }*/
+    }
+    @GetMapping("/new-")
 }
 
+*/

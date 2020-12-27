@@ -1,7 +1,5 @@
 package kea.project;
 
-import kea.project.model.Car;
-import kea.project.repository.CarRepository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -14,6 +12,8 @@ public class ProjectApplication {
         CarRepository cr = new CarRepository();
         cr.printCar();
          */
+
+        System.out.println("wakanda 4ever");
 
     }
 
