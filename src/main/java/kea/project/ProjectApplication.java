@@ -13,8 +13,6 @@ public class ProjectApplication {
         cr.printCar();
          */
 
-        System.out.println("wakanda 4ever");
-
     }
 
 }
